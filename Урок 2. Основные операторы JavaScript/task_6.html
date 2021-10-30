@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /**
+         * Запрашивает сумму, которую необходимо положить на счет
+         * и в зависимости от суммы, выводит сообщение о зачислении
+         * в соответствующем падеже
+         */
+        function putMoney(){
+            let rubles = +prompt('Сколько рублей вы хотите положить на счет в банке?')
+            switch (String(rubles).charAt(String(rubles).length - 1)){
+                case '1':
+                    alert(`Ваша сумма в ${rubles} рубль успешно зачислена.`);
+                    break;
+                case '2':
+                case '3':
+                case '4':
+                    alert(`Ваша сумма в ${rubles} рубля успешно зачислена.`);
+                    break;
+                default:
+                    alert(`Ваша сумма в ${rubles} рублей успешно зачислена.`);
+                    break;
+            }
+        }
+
+        putMoney()
+    </script>
+</body>
+

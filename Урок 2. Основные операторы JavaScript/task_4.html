@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /**
+         * Функция получения суммы двух чисел
+         * @param {number} num1 - Первое слагаемое
+         * @param {number} num2 - Второе слагаемое
+         * @returns {number} - Сумма двух слагаемых num1 и num2
+         */
+        function getSum(num1, num2){
+            return num1 + num2;
+        }
+
+        /**
+         * Функция получения разности двух чисел
+         * @param {number} num1 - Уменьшаемое
+         * @param {number} num2 - Вычитаемое
+         * @returns {number} - Разность num1 и num2
+         */
+        function getDif(num1, num2){
+            return num1 - num2;
+        }
+
+        /**
+         * Функция получения произведения двух чисел
+         * @param {number} num1 - Множимое
+         * @param {number} num2 - Множитель
+         * @returns {number} - Произведение num1 и num2
+         */
+        function getMul(num1, num2){
+            return num1 * num2;
+        }
+
+        /**
+         * Функция получения частного двух чисел
+         * @param {number} num1 - Делимое
+         * @param {number} num2 - Делитель
+         * @returns {number} - Частное num1 и num2
+         */
+        function getDiv(num1, num2){
+            return num1 / num2;
+        }
+
+        alert('Сумма: ' + getSum(10, 5) + ' Разность: ' + getDif(10, 5) +
+            ' Произведение: ' + getMul(10, 5) + ' Частное: ' + getDiv(10, 5))
+    </script>
+</body>
+

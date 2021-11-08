@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        //Реализация в стиле es5
+        /**
+         *
+         * @param name {string} - Наименование товара.
+         * @param price {number} - Стоимость товара.
+         * @constructor
+         */
+        function ProductES5(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        ProductES5.prototype.make25PercentDiscount = function() {
+            this.price *= 0.75;
+        };
+
+        let objES5 = new ProductES5('Apple', 100);
+        objES5.make25PercentDiscount();
+
+        //Реализация в стиле es6
+        class ProductES6 {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            make25PercentDiscount() {
+                this.price *= 0.75;
+            }
+        }
+
+        let objES6 = new ProductES6('Apple', 100);
+        objES6.make25PercentDiscount();
+    </script>
+</body>
+</html>

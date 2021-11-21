@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        function transNumToObj(candidate){
+            if(isNaN(candidate)){
+                console.log('Вам необходимо ввести число!');
+                return {};
+            } else if(!Number.isInteger(candidate)){
+                console.log('Не забывайте, что число должно быть целым');
+                return {};
+            } else if(candidate < 0 || candidate > 999){
+                console.log('Доступный диапазон числа - от 0 до 999 включительно');
+                return {};
+            }
+
+            class DischargesOfNum{
+                constructor(num) {
+                    this.units = num % 10;
+                    this.tens = Math.floor(num / 10 % 10);
+                    this.hundreds = Math.floor(num / 100);
+                }
+            }
+            return new DischargesOfNum(candidate);
+        }
+
+        let numUser = +prompt('Введите целое число от 0 до 999 включительно: ');
+        let objUser = transNumToObj(numUser);
+    </script>
+</body>
+</html>

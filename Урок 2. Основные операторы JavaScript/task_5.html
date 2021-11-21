@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /**
+         * Функция получения суммы двух чисел
+         * @param {number} num1 - Первое слагаемое
+         * @param {number} num2 - Второе слагаемое
+         * @returns {number} - Сумма двух слагаемых num1 и num2
+         */
+        function getSum(num1, num2){
+            return num1 + num2;
+        }
+
+        /**
+         * Функция получения разности двух чисел
+         * @param {number} num1 - Уменьшаемое
+         * @param {number} num2 - Вычитаемое
+         * @returns {number} - Разность num1 и num2
+         */
+        function getDif(num1, num2){
+            return num1 - num2;
+        }
+
+        /**
+         * Функция получения произведения двух чисел
+         * @param {number} num1 - Множимое
+         * @param {number} num2 - Множитель
+         * @returns {number} - Произведение num1 и num2
+         */
+        function getMul(num1, num2){
+            return num1 * num2;
+        }
+
+        /**
+         * Функция получения частного двух чисел
+         * @param {number} num1 - Делимое
+         * @param {number} num2 - Делитель
+         * @returns {number} - Частное num1 и num2
+         */
+        function getDiv(num1, num2){
+            return num1 / num2;
+        }
+
+        /**
+         * Функция вычисления двух чисел, вариация простейшего калькулятора.
+         * @param {number} arg1 - Первое число
+         * @param {number} arg2 - Второе число
+         * @param {string} operation - Необходимая операция вычисления. На выбор: +, -, *, /
+         */
+        function mathOperation(arg1, arg2, operation){
+            switch (operation){
+                case '+':
+                    alert('Сумма: ' + getSum(arg1, arg2));
+                    break;
+                case '-':
+                    alert('Разность: ' + getDif(arg1, arg2));
+                    break;
+                case '*':
+                    alert('Произведение: ' + getMul(arg1, arg2));
+                    break;
+                case '/':
+                    alert('Частное: ' + getDiv(arg1, arg2));
+                    break;
+            }
+        }
+
+        mathOperation(10, 5, '+')
+        mathOperation(10, 5, '-')
+        mathOperation(10, 5, '*')
+        mathOperation(10, 5, '/')
+    </script>
+</body>
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        //Реализация в стиле es5
+        function PostES5(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        PostES5.prototype.edit = function(text) {
+            this.text = text;
+        };
+
+        function AttachedPostES5(author, text, date) {
+            PostES5.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPostES5.prototype = Object.create(PostES5.prototype);
+        AttachedPostES5.prototype.constructor = AttachedPostES5;
+
+        AttachedPostES5.prototype.makeTextHighlighted = function() {
+            this.highlighted = true;
+        };
+
+        let objES5 = new AttachedPostES5('Petya', '456', '2021-10-02');
+        objES5.edit('45678');
+        objES5.makeTextHighlighted();
+
+        //Реализация в стиле es6
+        class PostES6 {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit(text) {
+                this.text = text;
+            }
+        }
+
+        class AttachedPostES6 extends PostES6 {
+            constructor(author, text, date) {
+                super(author, text, date);
+                this.highlighted = false;
+            }
+
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        let objES6 = new AttachedPostES6('Volodya', 'man', '2021-05-06');
+        objES6.edit('many');
+        objES6.makeTextHighlighted();
+    </script>
+</body>
+</html>
